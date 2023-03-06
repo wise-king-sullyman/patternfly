@@ -1,7 +1,7 @@
 ---
 id: Alert group
 section: components
-cssPrefix: pf-c-alert-group
+cssPrefix: pf-v5-c-alert-group
 ---
 
 ## Examples
@@ -47,13 +47,13 @@ cssPrefix: pf-c-alert-group
 ```
 
 ### Overview
-`.pf-c-alert-group` is optional when only one alert is needed. It becomes required when more than one alert is used in a list.
+`.pf-v5-c-alert-group` is optional when only one alert is needed. It becomes required when more than one alert is used in a list.
 
 ### Usage
 | Attribute | Applied to | Outcome |
 | -- | -- | -- |
-| `.pf-c-alert-group` | `<ul>` | Creates an alert group component. **Required** |
-| `.pf-c-alert-group__item` | `<li>` | Creates an alert group item. **Required** |
+| `.pf-v5-c-alert-group` | `<ul>` | Creates an alert group component. **Required** |
+| `.pf-v5-c-alert-group__item` | `<li>` | Creates an alert group item. **Required** |
 
 ### Toast alert group
 ```hbs isFullscreen
@@ -115,7 +115,7 @@ cssPrefix: pf-c-alert-group
 {{/alert-group}}
 ```
 ### Overview
-An alert group that includes the `.pf-m-toast` modifier becomes a toast alert group with unique positioning in the top-right corner of the window. `.pf-c-alert-group` is required to create a toast alert group.
+An alert group that includes the `.pf-m-toast` modifier becomes a toast alert group with unique positioning in the top-right corner of the window. `.pf-v5-c-alert-group` is required to create a toast alert group.
 
 Every toast alert must include a close button to dismiss the alert.
 
@@ -124,7 +124,7 @@ When toast alerts include a link or action, these elements are not announced as 
 For sighted users, interactive elements can be included in this message in one of the following ways:
 
 - Using a link to the Builds page: “The build is complete. Go to the [Builds]() page to download” using `<a href="url">Builds</a>`
-- Using a button to download: “The build is complete. Go to the Builds page to [download]()" using `<button class="pf-c-button pf-m-link pf-m-inline type="button">download</button>`
+- Using a button to download: “The build is complete. Go to the Builds page to [download]()" using `<button class="pf-v5-c-button pf-m-link pf-m-inline type="button">download</button>`
 
 ## Documentation
 ### Overview
@@ -133,5 +133,5 @@ Alert groups are used to contain and align consecutive alerts. Groups can either
 ### Modifiers
 | Class | Applied to | Outcome |
 | -- | -- | -- |
-| `.pf-m-toast`| `.pf-c-alert-group` | Applies toast alert styling to an alert group. |
-| `.pf-c-alert-group__overflow-button` | `<button>` | Applies overflow button styling to an alert group overflow button. |
+| `.pf-m-toast`| `.pf-v5-c-alert-group` | Applies toast alert styling to an alert group. |
+| `.pf-v5-c-alert-group__overflow-button` | `<button>` | Applies overflow button styling to an alert group overflow button. |

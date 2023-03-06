@@ -1,7 +1,10 @@
 // These imports must not contain any rendered output
+@import "./init";
 @import "./div";
 @import "./functions";
 @import "./colors";
 @import "./scss-variables";
 @import "./mixins";
+@import "./component-namespaces";
+@import "./layout-namespaces";
 @import "./placeholders";
