@@ -1,7 +1,7 @@
 ---
 id: 'Icon'
 section: components
-cssPrefix: pf-v5-c-icon
+cssPrefix: pf-v5-icon
 ---
 
 ## Examples
