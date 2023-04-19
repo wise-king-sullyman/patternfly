@@ -2,7 +2,7 @@
 
 @mixin pf-v5-charts-theme-dark($pf-v5-charts-theme-dark-class: "") {
   // stylelint-disable
-  .#{$charts} {
+  .#{$chart} {
     svg g[clip-path] {
       mix-blend-mode: normal;
     }
