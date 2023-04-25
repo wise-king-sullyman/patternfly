@@ -55,10 +55,10 @@ export const setVariable = (varName, varValue, options) => {
   // console.log(options.data);
 };
 
-export const getVariable = (varValue, options) => {
-  console.log('options', options);
+export const getVariable = (varValue, that, options) => {
+  const mappedVariableName = options.data.root[varValue];
 
-  return options.data.root[varValue];
+  return that[mappedVariableName];
 };
 
 export const pfv = (type) => {
