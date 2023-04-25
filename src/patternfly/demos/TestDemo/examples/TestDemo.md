@@ -15,9 +15,9 @@ import "./test-demo.css"
 }}
 
 {{#*inline "page-template-main-content"}}
-  {{#> page-main-section page-main-section--IsLimitWidth="true" page-main-section--modifier="pf-m-align-center pf-m-light"}}
+  {{#> page-main-section page-main-section--IsLimitWidth="true" page-main-section--modifier="pf-  m-align-center pf-m-light"}}
     {{#> test-demo}}
-      Basic example content
+      Update Basic example content
       <div class="pf-c-card">
         <div class="pf-c-card__header">
           test header
@@ -26,12 +26,15 @@ import "./test-demo.css"
           test body
         </div>
       </div>
-      {{#> card pfv="this"}}
-        {{#> card-header}}
+
+      {{#> card card--version='pf-c-sss'}}
+        {{#> card-title}}
           Header
-        {{/card-header}}
+        {{/card-title}}
       {{/card}}
     {{/test-demo}}
+    {{> card-template-gallery card-template-gallery--id="card-view-basic-example-gallery"}}
+
   {{/page-main-section}}
 {{/inline}}
 ```
@@ -48,7 +51,7 @@ import "./test-demo.css"
       test body
     </div>
   </div>
-  {{#> card pfv="this"}}
+  {{#> card}}
     {{#> card-header}}
       Header
     {{/card-header}}

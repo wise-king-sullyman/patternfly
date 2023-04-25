@@ -12,25 +12,8 @@ import prettyhtml from '@starptech/prettyhtml';
 const { src, watch } = gulp;
 export const hbsFileMap = {};
 export const hbsInstance = Handlebars.create();
-export const patternflyNS = 'pf-';
-export const patternflyVersion = 'v5-';
+
 const registeredHelpers = {};
-
-function pfv(type) {
-  const namespace = patternflyNS;
-  let version = patternflyVersion;
-  let prefix = 'c-';
-
-  if (type === 'unset-prefix') {
-    prefix = '';
-  } else if (type === 'unset-version') {
-    version = '';
-  } else if (type.length) {
-    prefix = type + '-';
-  }
-
-  return namespace + version + prefix;
-};
 
 function compileHBS0(srcFiles) {
   return srcFiles.pipe(
