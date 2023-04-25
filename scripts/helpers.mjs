@@ -44,7 +44,14 @@ export const ternary = (testValue, trueValue, fallback) => {
 /** Helper which allows a booleans value to be inversed, similar to how notting a variable with ! works in regular JS */
 export const inverse = (bool) => (bool ? null : 'true');
 
-export function pfv(type) {
+export const assignVariable = (varName, varValue, options) => {
+  if (!options.data.root) {
+    options.data.root = {};
+  }
+  options.data.root[varName] = varValue;
+};
+
+export const pfv = (type) => {
   const namespace = patternflyNS;
   let version = patternflyVersion;
   let prefix = 'c-';

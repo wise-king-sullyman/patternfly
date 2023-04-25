@@ -1,0 +1,10 @@
+{{assignVariable 'local--class' class--name}}
+{{assignVariable 'versioned--class' (concat pfv class--name)}}
+{{!-- {{assignVariable 'local--class' class--name}} --}}
+{{!-- {{assignVariable 'local--class' component--class}} --}}
+
+{{@root.local--class}}
+{{@root.versioned--class}}
+
+
+class="{{@root.local--class}}{{#if @root.local--modifier}} {{@root.local--modifier}}{{/if}}"
