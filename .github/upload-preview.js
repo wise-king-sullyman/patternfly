@@ -29,6 +29,9 @@ switch(uploadFolderName) {
   case 'public':
     if (!prnum && prbranch === 'v6') {
       uploadURL = 'pf6.patternfly.org';
+    }
+    if (!prnum && prbranch === 'main') {
+      uploadURL = 'core-staging.patternfly.org';
       fs.writeFileSync(path.join(__dirname, '../public/CNAME'), uploadURL);
     }
     else {

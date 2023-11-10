@@ -311,6 +311,58 @@ $pf-page-v5--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg
 
 .#{$page}__header-tools-item {
   @include pf-v5-hidden-visible(var(--#{$page}__header-tools-item--Display));
+
+  .#{$notification-badge} {
+    &.pf-m-read {
+      &:hover {
+        --#{$notification-badge}--after--BackgroundColor: var(--#{$page}__header-tools-item--c-notification-badge--hover--BackgroundColor);
+      }
+    }
+  }
+
+  &.pf-m-selected {
+    .#{$button} {
+      background-color: var(--#{$page}__header-tools--c-button--m-selected--before--BackgroundColor); // update at breaking change
+      border-radius: var(--#{$page}__header-tools--c-button--m-selected--before--BorderRadius); // update at breaking change
+
+      // remove at breaking change
+      &::before {
+        position: absolute;
+        inset: 0;
+        width: var(--#{$page}__header-tools--c-button--m-selected--before--Width); // remove at breaking change
+        height: var(--#{$page}__header-tools--c-button--m-selected--before--Height); // remove at breaking change
+        content: "";
+      }
+
+      // stylelint-disable
+      .#{$notification-badge} {
+        &.pf-m-unread {
+          --#{$notification-badge}--after--BackgroundColor: var(--#{$page}__header-tools--c-button--m-selected--notification-badge--m-unread--after--BackgroundColor);
+
+          &::after {
+            border-color: var(--#{$page}__header-tools--c-button--m-selected--c-notification-badge--m-unread--after--BorderColor);
+          }
+        }
+
+        &.pf-m-attention {
+          --#{$notification-badge}--after--BackgroundColor: var(--#{$pf-global}--danger-color--200);
+        }
+      }
+      // stylelint-enable
+    }
+  }
+
+  .#{$button}:focus {
+    .#{$notification-badge} {
+      &.pf-m-unread {
+        --#{$notification-badge}--after--BackgroundColor: var(--#{$page}__header-tools--c-button--notification-badge--m-unread--after--BackgroundColor);
+      }
+
+      &.pf-m-attention {
+        --#{$notification-badge}--after--BackgroundColor: var(--#{$page}__header-tools--c-button--notification-badge--m-attention--after--BackgroundColor);
+      }
+    }
+  }
 }
 
 // Sidebar
@@ -364,11 +416,10 @@ $pf-page-v5--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg
   border-block-end: var(--#{$page}__sidebar-header--BorderBottomWidth) solid var(--#{$page}__sidebar-header--BorderBottomColor);
 }
 
-.#{$page}__sidebar-title {
-  font-family: var(--#{$page}__sidebar-title--FontFamily);
-  font-size: var(--#{$page}__sidebar-title--FontSize);
-  font-weight: var(--#{$page}__sidebar-title--FontWeight);
-  line-height: var(--#{$page}__sidebar-title--LineHeight);
+    --#{$page}__sidebar--BackgroundColor: var(--#{$page}__sidebar--m-light--BackgroundColor);
+
+    border-inline-end: var(--#{$page}__sidebar--m-light--BorderRightWidth) solid var(--#{$page}__sidebar--m-light--BorderRightColor);
+  }
 }
 
 .#{$page}__sidebar-body {
@@ -380,7 +431,7 @@ $pf-page-v5--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg
   }
 
   &.pf-m-menu {
-    background-color: var(--#{$page}__sidebar-body--m-menu--BackgroundColor);
+    background-color: var(--#{$pf-global}--palette--black-900);
     border-block-start: var(--#{$page}__sidebar-body--m-menu--BorderTopWidth) solid var(--#{$page}__sidebar-body--m-menu--BorderTopColor);
 
     & + & {
@@ -477,7 +528,7 @@ $pf-page-v5--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg
 
       &.pf-m-sticky-top#{$breakpoint-name} {
         position: sticky;
-        inset-block-start: 0;
+       inset-block-start: 0;
         z-index: var(--#{$page}--section--m-sticky-top--ZIndex);
         box-shadow: var(--#{$page}--section--m-sticky-top--BoxShadow);
       }

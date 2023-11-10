@@ -204,7 +204,7 @@ $pf-v5-c-masthead--inset-map: build-spacer-map("none", "sm", "md", "lg", "xl", "
   }
 
   .#{$toolbar}__expandable-content {
-    inset-block-start: 100%;
+   inset-block-start: 100%;
 
     &::before {
       position: absolute;
